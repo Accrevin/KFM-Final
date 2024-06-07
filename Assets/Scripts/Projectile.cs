@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Transform target;
     public float speed;
-
+    public int damage;
     private void Update()
     {
         //Move projectile towards enemy if enemy still exists
@@ -22,5 +22,10 @@ public class Projectile : MonoBehaviour
 
 
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.GetComponent<TrackHealth>().TakeDamage(damage);
     }
 }
