@@ -38,17 +38,17 @@ public class InputData : MonoBehaviour
         if (!rightController.isValid)
         {
             InitializeInputDevice(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Right, ref rightController);
-            Debug.Log("LEFT");
+            //Debug.Log("LEFT");
         }
         if (!leftController.isValid)
         {
             InitializeInputDevice(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Left, ref leftController);
-            Debug.Log("RIGHT");
+            //Debug.Log("RIGHT");
         }
         if (!HMD.isValid)
         {
             InitializeInputDevice(InputDeviceCharacteristics.HeadMounted, ref HMD);
-            Debug.Log("HMD");
+            //Debug.Log("HMD");
         }
 
     }
