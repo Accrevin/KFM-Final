@@ -8,7 +8,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadious = 5f;
+    public float lookRadius = 100f;
 
     Transform target;
     NavMeshAgent agent;
@@ -43,7 +43,7 @@ public class EnemyController : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
         bool stoopingDistanceBool = false;
         Debug.Log(velocity);
-        if (distance <= lookRadious && velocity <= 1.0f)
+        if (distance <= lookRadius && velocity <= 1.0f)
         {
             Debug.Log(velocity+"::::::::::::");
             agent.SetDestination(target.position);
@@ -59,7 +59,7 @@ public class EnemyController : MonoBehaviour
         
 
         }
-        else if (distance > lookRadious && Vector3.Distance(playerPositionInRange, transform.position) <= agent.stoppingDistance)
+        else if (distance > lookRadius && Vector3.Distance(playerPositionInRange, transform.position) <= agent.stoppingDistance)
         {
 
             velocity = 0.0f;
@@ -87,6 +87,6 @@ public class EnemyController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadious);
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }
